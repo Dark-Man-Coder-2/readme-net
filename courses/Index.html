@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>AffiliateStore | Courses</title>
+
+  <!-- Basic SEO -->
+  <meta name="description" content="" />
+  <meta name="keywords" content="affiliate products, online courses, digital assets" />
+  <meta name="author" content="Chris Arts" />
+
+  <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:title" content="AffiliateStore - Courses" />
+  <meta property="og:description" content="Join over 50,000+ marketers leveraging our premium high-conversion digital assets and education modules." />
+  <meta property="og:image" content="https://yitxwcsnvjfpcyftolqy.supabase.co/storage/v1/object/public/product-images/20250924_124113.jpg" />
+  <meta property="og:url" content="https://affiliatestoreng.vercel.app" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="" />
+  <meta name="twitter:title" content="AffiliateStore - Courses" />
+  <meta name="twitter:description" content="Join over 50,000+ marketers leveraging our premium high-conversion digital assets and education modules." />
+  <meta name="twitter:image" content="https://yitxwcsnvjfpcyftolqy.supabase.co/storage/v1/object/public/product-images/20250924_124113.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://yitxwcsnvjfpcyftolqy.supabase.co/storage/v1/object/public/product-images/icon.png" />
+  
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0d7ff2",
+            "brand-blue": "#0020e3",
+            "navy-900": "#111817",
+            "navy-700": "#1e2b29",
+            "background-gray": "#f8f9fa",
+            "tealAccent": "#14B8A6",
+            "navy": "#0F172A",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+        },
+      },
+    }
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('main-nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('bg-white/95', 'shadow-md', 'py-3');
+        nav.classList.remove('bg-transparent', 'py-5');
+      } else {
+        nav.classList.remove('bg-white/95', 'shadow-md', 'py-3');
+        nav.classList.add('bg-transparent', 'py-5');
+      }
+    });
+    window.addEventListener('scroll', function() {
+      const backToTop = document.getElementById('back-to-top');
+      if (window.scrollY > 300) {
+        backToTop.classList.remove('opacity-0', 'invisible');
+        backToTop.classList.add('opacity-100', 'visible');
+      } else {
+        backToTop.classList.add('opacity-0', 'invisible');
+        backToTop.classList.remove('opacity-100', 'visible');
+      }
+    });
+  </script>
+  <style type="text/tailwindcss">
+    :root {
+            --navy-deep: #0F172A;
+            --electric-blue: #0EA5E9;
+            --teal-accent: #14B8A6;
+            --crisp-white: #FFFFFF;
+        }
+    @layer components {
+            html {
+              scroll-behavior: smooth;
+            }
+            .none {
+              display: none;
+            }
+            .card-glow-hover:hover {
+              box-shadow: 0 0 25px -5px rgba(14, 165, 233, 0.5);
+              border-color: var(--electric-blue);
+            }
+            .buy-button-glow:hover {
+              box-shadow: 0 0 15px rgba(20, 184, 166, 0.6);
+              background-color: var(--electric-blue);
+            }
+            .category {
+                @apply px-5 py-2 rounded-lg border border-primary text-primary font-medium text-sm whitespace-nowrap transition-all;
+            }
+            .category.active {
+                @apply bg-primary text-white;
+            }
+            .category:hover:not(.active) {
+                @apply bg-primary/5;
+            }
+            .product-card-vertical {
+                @apply bg-white rounded-2xl border border-gray-100 overflow-hidden flex flex-col;
+            }
+            #side-nav-toggle:checked ~ #side-drawer {
+              transform: translateX(0);
+            }
+            #side-nav-toggle:checked ~ #nav-overlay {
+              opacity: 1;
+              visibility: visible;
+            }
+            .nav-link-hover {
+              position: relative;
+            }
+            .nav-link-hover::after {
+              content: '';
+              position: absolute;
+              bottom: -2px;
+              left: 0;
+              width: 0;
+              height: 2px;
+              background-color: var(--teal-accent);
+              transition: width 0.3s ease;
+            }
+            .nav-link-hover:hover::after {
+              width: 100%;
+            }
+            .nav-scrolled {
+              @apply bg-white/95 border-b border-slate-200;
+            }
+            #side-nav-toggle:checked+#nav-overlay {
+              opacity: 1;
+              visibility: visible;
+              pointer-events: auto;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 font-display text-navy-900 antialiased">
+  
+  <input class="hidden" id="side-nav-toggle" type="checkbox" />
+  <label for="side-nav-toggle" id="nav-overlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[60] opacity-0 invisible pointer-events-none transition-all duration-500 cursor-pointer"></label>
+  <div class="fixed top-0 left-0 h-full w-[320px] bg-white z-[70] shadow-2xl -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10 border-r border-slate-100 backdrop-blur-md bg-white/95" id="side-drawer">
+    <div class="flex justify-between items-center mb-16">
+      <div class="flex items-center gap-2">
+        <div class="bg-primary p-1.5 rounded-lg group-hover:rotate-12 transition-transform">
+          <span class="material-symbols-outlined text-white text-2xl">shopping_bag</span>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-navy">AffiliateStore</span>
+      </div>
+      <label class="cursor-pointer text-slate-400 hover:text-navy transition-colors" for="side-nav-toggle">
+        <span class="material-symbols-outlined">close</span>
+      </label>
+    </div>
+    <nav class="flex flex-col space-y-8">
+      <a class="text-2xl font-semibold text-navy nav-link-hover w-max" href="../index.html">Home</a>
+      <a class="text-2xl font-semibold text-navy nav-link-hover w-max" href="#">Courses</a>
+      <a class="text-2xl font-semibold text-navy nav-link-hover w-max" href="../index.html">About</a>
+      <a class="text-2xl font-semibold text-navy nav-link-hover w-max" href="#footer">Contact</a>
+    </nav>
+    <div class="mt-auto pt-10 border-t border-slate-100">
+      <div class="flex items-center gap-6 text-slate-400">
+        <a class="hover:text-primary transition-colors" href="../index.html">
+          <span class="material-symbols-outlined">public</span>
+        </a>
+        <a class="hover:text-primary transition-colors" href="mailto:affiliatestoreng@email.com?subject=Affiliate%20Store%20Support&body=Hello%20my%20name%20is%20">
+          <span class="material-symbols-outlined">alternate_email</span>
+        </a>
+        <a class="hover:text-primary transition-colors" href="#">
+          <span class="material-symbols-outlined">rss_feed</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 shadow-mb bg-transparent border-b border-white/10" id="main-nav">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div class="flex items-center gap-2 group cursor-pointer">
+        <div class="bg-primary p-1.5 rounded-lg group-hover:rotate-12 transition-transform">
+          <span class="material-symbols-outlined text-white text-2xl">shopping_bag</span>
+        </div>
+        <span class="text-2xl font-bold tracking-tight text-navy">AffiliateStore</span>
+      </div>
+      <div class="md:flex items-center space-x-6">
+        <div class="hidden md:flex items-center space-x-6">
+          <a class="text-sm font-semibold text-navy/70 hover:text-primary transition-colors" href="../index.html">Home</a>
+          <a class="text-sm font-semibold text-navy/70 hover:text-primary transition-colors" href="#">Courses</a>
+          <a class="text-sm font-semibold text-navy/70 hover:text-primary transition-colors" href="../index.html">About</a>
+          <a class="text-sm font-semibold text-navy/70 hover:text-primary transition-colors" href="#footer">Contact</a>
+        </div>
+        <label class="cursor-pointer p-2 -ml-2 hover:bg-slate-100 rounded-full transition-colors group" for="side-nav-toggle">
+          <span class="material-symbols-outlined text-navy text-2xl group-hover:scale-110 transition-transform">menu</span>
+        </label>
+      </div>
+    </div>
+  </header>
+  
+  <div class="mt-20 min-h-screen flex flex-col">
+    <div class="bg-white border-b border-gray-100 px-6 py-4">
+      <div class="max-w-7xl mx-auto overflow-x-auto no-scrollbar">
+        <div class="flex items-center gap-3">
+          <div class="category active" data-category="all">All</div>
+          <div class="category" data-category="arts-crafts">Arts and Crafts</div>
+          <div class="category" data-category="automobiles">Automobiles</div>
+          <div class="category" data-category="content-media">Content and Media</div>
+          <div class="category" data-category="electronics-gadgets">Electronics and Gadgets</div>
+          <div class="category" data-category="fashion-wears">Fashion and Wears</div>
+          <div class="category" data-category="health-beauty">Health and Beauty</div>
+          <div class="category" data-category="health-fitness">Health and Fitness</div>
+          <div class="category" data-category="home-office">Home and Office</div>
+          <div class="category" data-category="marketing-sales">Marketing and Sales</div>
+          <div class="category" data-category="romance">Romance</div>
+          <div class="category" data-category="software-tech">Software and Tech</div>
+          <div class="category" data-category="wealth-finance">Wealth and Finance</div>
+        </div>
+      </div>
+    </div>
+    <main class="flex-1 max-w-7xl w-full mx-auto px-6 py-10">
+      <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        
+        <div id="preloader" class="flex flex-col items-center gap-6">
+          <div class="w-14 h-14 border-4 border-slate-200 border-t-primary rounded-full animate-spin"></div>
+          <p class="text-slate-500 font-medium">Loading products...</p>
+        </div>
+        
+      </div>
+    </main>
+    <footer id="footer" class="bg-navy text-slate-400 py-24 px-6 border-t border-slate-800">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
+        <div class="space-y-8">
+          <div class="flex items-center gap-2 text-white">
+            <span class="material-symbols-outlined text-primary text-3xl">shopping_bag</span>
+            <span class="text-2xl font-bold tracking-tight">AffiliateStore</span>
+          </div>
+          <p class="text-sm leading-relaxed max-w-xs">Democratizing access to high-tier digital education and marketing assets since 2024.</p>
+          <div class="flex gap-6">
+            <a class="hover:text-primary transition-colors" href="../index.html"><span class="material-symbols-outlined">public</span></a>
+            <a class="hover:text-primary transition-colors" href="mailto:affiliatestoreng@email.com?subject=Affiliate%20Store%20Support&body=Hello%20my%20name%20is%20"><span class="material-symbols-outlined">alternate_email</span></a>
+            <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">rss_feed</span></a>
+          </div>
+        </div>
+        <div>
+          <h5 class="text-white font-bold mb-8 uppercase tracking-widest text-xs">Catalog</h5>
+          <ul class="space-y-4 text-sm font-medium">
+            <li><a class="hover:text-white transition-colors" href="#header">Marketing Mastery</a></li>
+            <li><a class="hover:text-white transition-colors" href="#header">Financial Growth</a></li>
+            <li><a class="hover:text-white transition-colors" href="#header">Design Assets</a></li>
+            <li><a class="hover:text-white transition-colors" href="#header">Bundle Deals</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-white font-bold mb-8 uppercase tracking-widest text-xs">Resource Hub</h5>
+          <ul class="space-y-4 text-sm font-medium">
+            <li><a class="hover:text-white transition-colors" href="#header">Success Blueprint</a></li>
+            <li><a class="hover:text-white transition-colors" href="https://wa.me/2348022839391?text=Hello,%20I'm%20interested%20in%20joining%20the%20affiliate%20program.%0AMy%20name%20is">Affiliate Program</a></li>
+            <li><a class="hover:text-white transition-colors" href="https://wa.me/2348022839391">Help Center</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-white font-bold mb-8 uppercase tracking-widest text-xs">Support</h5>
+          <ul class="space-y-4 text-sm font-medium">
+            <li class="flex items-center gap-3"><a href="https://wa.me/2348022839391" ><span class="material-symbols-outlined text-primary text-sm">chat_bubble</span> customer care</a></li>
+            <li class="flex items-center gap-3"><a><span class="material-symbols-outlined text-primary text-sm">schedule</span> Mon - Fri: 9am - 6pm</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto pt-16 mt-16 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium">
+        <p>© 2024 AffiliateStore. Empowering independent growth worldwide.</p>
+        <div class="flex gap-8">
+          <a class="hover:text-white" href="#">Privacy Policy</a>
+          <a class="hover:text-white" href="#">Cookie Settings</a>
+          <a class="hover:text-white" href="#">Legal Notice</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <a class="fixed bottom-8 right-8 w-14 h-14 bg-white border border-primary rounded-full flex items-center justify-center shadow-xl opacity-0 invisible z-50 hover:bg-gray-50 transition-all duration-300" href="#" id="back-to-top">
+    <span class="material-symbols-outlined text-navy-900 font-bold">north</span>
+  </a>
+  
+  <script type="module">
+    import { supabase } from '/js/supabase.js';
+   // const supabase = await initSupabase();
+    
+    let allProducts = [];
+    
+    async function loadProducts() {
+      const preloader = document.getElementById('preloader');
+      const productsDiv = document.getElementById('products-grid');
+      const priceFormatter = new Intl.NumberFormat("en-NG");
+      
+      
+      preloader.style.display = 'block';
+      
+      
+      try {
+        const { data, error } = await supabase.from('Products').select('*');
+        console.log('Data:', data, 'Error:', error);
+        if (error) throw error;
+        if (!data || data.length === 0) {
+          productsDiv.innerHTML = '<p>No products yet!</p>';
+        } else {
+          allProducts = data; // Store all products
+          productsDiv.innerHTML = '';
+          data.forEach((product) => {
+            const productDiv = document.createElement('div');
+            productDiv.className = 'product bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 transition-all duration-500 hover:-translate-y-4 card-glow-hover group';
+            productDiv.setAttribute('data-category', product.category);
+            const discountedPrice = Number(product.price);
+            const discount = Number(product.discount) || 0;
+            const originalPrice = discount > 0 ?
+              Math.round(discountedPrice / (1 - discount / 100)) : "";
+            
+            productDiv.innerHTML = `
+            
+          <div class="relative h-60 overflow-hidden">
+            <img alt="${product.title}" src="${product.imageUrl}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+            <div class="absolute inset-0 bg-navy/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <a href="/product/${product.slug}" class="bg-white text-navy px-6 py-2.5 rounded-xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-xl">Quick View</a>
+            </div>
+            <div class="${product.discountGroup}">
+              <span class="absolute top-5 left-5 bg-${product.discountGroup}-500 text-white px-4 py-1 rounded-lg text-sm font-bold shadow-lg">${product.discount}% OFF</span>
+            </div>
+
+            <button onclick="copyText(this, '/product/${product.slug}')" class="absolute top-5 right-20 z-10 flex items-center gap-2 px-3 py-1.5 bg-white/90 backdrop-blur-sm border border-navy-900/10 rounded-full shadow-sm text-navy-900 hover:text-primary hover:border-primary hover:bg-white transition-all duration-200 group/copy">
+              <span class="material-symbols-outlined text-primary group-hover/copy:scale-110 transition-transform" style="font-size: 16px;">content_copy</span>
+            </button>
+            <button onclick="shareProduct('${product.slug}')" class="absolute top-5 right-5 z-10 flex items-center gap-2 px-3 py-1.5 bg-white/90 backdrop-blur-sm border border-navy-900/10 rounded-full shadow-sm text-navy-900 hover:text-primary hover:border-primary hover:bg-white transition-all duration-200 group/copy">
+              <span class="material-symbols-outlined text-primary group-hover/copy:scale-110 transition-transform" style="font-size: 16px;">share</span>
+            </button>
+            
+            
+          </div>
+          <div class="p-8">
+            <div class="flex items-center gap-1 mb-2 text-amber-400">
+              <span>${product.rating}</span>
+              <span class="text-slate-400 text-xs ml-2 font-medium">(${product.ratingCount || 0} reviews)(${product.sales} sales)</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-navy">${product.title}</h3>
+            <p>${product.description}</p>
+            <div class="flex items-center justify-between mt-auto pt-5 border-t border-slate-50">
+              <div class="flex items-baseline gap-2">
+                <span class="text-2xl font-extrabold text-primary">₦${priceFormatter.format(Number(product.price))}</span>
+                <span class="text-sm text-slate-400 line-through">₦${priceFormatter.format(Number(originalPrice))}</span>
+              </div>
+              <a href="${product.affLink}" class="bg-tealAccent text-white px-5 py-2.5 rounded-xl font-bold flex items-center gap-2 transition-all duration-300 buy-button-glow">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span>buy</span>
+              </a>
+            </div>
+          </div>
+            
+          `;
+            productsDiv.appendChild(productDiv);
+            setTimeout(() => {
+              productDiv.classList.add('active');
+            }, 100);
+          });
+        }
+      } catch (error) {
+        console.error('Error loading products:', error);
+        productsDiv.innerHTML = '<p>Error loading products</p>';
+      } finally {
+        clearInterval(interval);
+        preloader.style.display = 'none';
+        filterProducts('all'); // Show all product after loading
+      }
+    }
+
+    window.copyText = function(btn, path) {
+      const link = window.location.origin + path;
+      navigator.clipboard.writeText(link).then(() => {
+        btn.innerHTML = `
+          <span class="material-symbols-outlined" text-primary style="font-size: 16px;">done_all</span> 
+        `;
+        setTimeout(() => {
+          btn.innerHTML = `
+            <span class="material-symbols-outlined" text-primary style="font-size: 16px;">content_copy</span>
+          `;
+        }, 2000);
+      }).catch(err => {
+        console.error("Copy failed:", err);
+      });
+    };
+    
+    window.shareProduct = function(slug) {
+      const product = allProducts.find(p => p.slug === slug);
+      if (!product) return;
+      const url = window.location.origin + "/product/" + product.slug;
+      const text = `${product.title}
+                ₦${product.price}
+                ${product.description.slice(0, 100)}...
+                Buy here:
+                ${url}`;
+  
+      // Native share (mobile)
+      if (navigator.share) {
+        navigator.share({
+          text:`*${product.title}*\n\nPrice: ₦${product.price}\n\n${product.description}\n\n🔗 Get here:\n${url}`,
+            
+            
+        }).catch(err => console.log("Share cancelled"));
+      } else {
+        // Fallback (WhatsApp)
+        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
+        window.open(whatsappUrl, '_blank');
+      }
+    };
+
+    
+    function filterProducts(category) {
+      const products = document.querySelectorAll('.product');
+      products.forEach(product => {
+        const productCategory = product.getAttribute('data-category');
+        if (category === 'all' || productCategory === category) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+    
+    document.querySelectorAll('.category').forEach(category => {
+      category.addEventListener('click', () => {
+        const selectedCategory = category.getAttribute('data-category');
+        document.querySelectorAll('.category').forEach(cat => cat.classList.remove('active'));
+        category.classList.add('active');
+        filterProducts(selectedCategory);
+      });
+    });
+    
+    loadProducts();
+  </script>
+  <script src="js/category.js" type="text/javascript"></script>
+  <script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  
+</body>
+
+</html>
