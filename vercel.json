@@ -1,0 +1,19 @@
+{
+  "rewrites": [
+    {
+      "source": "/product/:slug",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(bot|crawl|spider|facebookexternalhit|whatsapp|twitterbot|linkedinbot|slackbot|discordbot)"
+        }
+      ],
+      "destination": "/api/product-meta?slug=:slug"
+    },
+    {
+      "source": "/product/:slug",
+      "destination": "/product/index.html?slug=:slug"
+    }
+  ]
+}

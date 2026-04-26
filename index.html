@@ -1,0 +1,648 @@
+<!-- Welcome thief, build your own site abeg  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>AffiliateStore - Scale Your Revenue</title>
+
+  <!-- Basic SEO -->
+  <meta name="description" content="" />
+  <meta name="keywords" content="affiliate products, online courses, digital assets" />
+  <meta name="author" content="Chris Arts" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:title" content="AffiliateStore - Scale Your Revenue" />
+  <meta property="og:description" content="Join over 50,000+ marketers leveraging our premium high-conversion digital assets and education modules." />
+  <meta property="og:image" content="https://yitxwcsnvjfpcyftolqy.supabase.co/storage/v1/object/public/product-images/20250924_124113.jpg" />
+  <meta property="og:url" content="https://affiliatestoreng.vercel.app" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="" />
+  <meta name="twitter:title" content="AffiliateStore - Scale Your Revenue" />
+  <meta name="twitter:description" content="Join over 50,000+ marketers leveraging our premium high-conversion digital assets and education modules." />
+  <meta name="twitter:image" content="https://yitxwcsnvjfpcyftolqy.supabase.co/storage/v1/object/public/product-images/20250924_124113.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://yitxwcsnvjfpcyftolqy.supabase.co/storage/v1/object/public/product-images/icon.png" />
+  
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style type="text/tailwindcss">
+    :root {
+            --navy-deep: #0F172A;
+            --electric-blue: #0EA5E9;
+            --teal-accent: #14B8A6;
+            --crisp-white: #FFFFFF;
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 rgba(14, 165, 233, 0); }
+            50% { box-shadow: 0 0 20px rgba(14, 165, 233, 0.4); }
+        }
+        @keyframes bounce-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+         @keyframes scroll-pulse {
+            0% { opacity: 0; transform: translateY(-10px); }
+            50% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(10px); }
+        }
+        .floating-icon {
+            animation: float 6s ease-in-out infinite;
+        }
+        .hero-parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .card-glow-hover:hover {
+            box-shadow: 0 0 25px -5px rgba(14, 165, 233, 0.5);
+            border-color: var(--electric-blue);
+        }
+        .buy-button-glow:hover {
+            box-shadow: 0 0 15px rgba(20, 184, 166, 0.6);
+            background-color: var(--electric-blue);
+        }
+        .category-tile:hover .description-reveal {
+            max-height: 100px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-scrolled {
+            @apply bg-white/95 border-b border-slate-200;
+        }
+        .success-slide {
+            scroll-snap-align: start;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .animate-on-scroll {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .icon-bounce:hover span {
+            animation: bounce-subtle 0.6s ease-in-out;
+        }
+        .icon-rotate:hover span {
+            transform: rotate(360deg);
+            transition: transform 0.6s ease;
+        }
+        
+        #side-nav-toggle:checked ~ #side-drawer {
+            transform: translateX(0);
+        }
+        #side-nav-toggle:checked ~ #nav-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+        .nav-link-hover {
+            position: relative;
+        }
+        .nav-link-hover::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--teal-accent);
+            transition: width 0.3s ease;
+        }
+        .nav-link-hover:hover::after {
+            width: 100%;
+        }
+        #side-nav-toggle:checked + #nav-overlay {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+         @keyframes scroll-pulse {
+            0% { opacity: 0; transform: translateY(-10px); }
+            50% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(10px); }
+        }
+        .scroll-indicator-bounce {
+            animation: bounce-slow 2s ease-in-out infinite;
+        }
+         .scroll-arrow-glow:hover {
+            text-shadow: 0 0 8px rgba(20, 184, 166, 0.8);
+        }
+        .chevron-arrow {
+            animation: scroll-pulse 2s infinite;
+        }
+        .chevron-arrow:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .chevron-arrow:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .chevron-arrow:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+    </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#0EA5E9",
+            navy: "#0F172A",
+            tealAccent: "#14B8A6",
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+          },
+        },
+      },
+    };
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('main-nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('bg-white/95', 'shadow-md', 'py-3');
+        nav.classList.remove('bg-transparent', 'py-5');
+      } else {
+        nav.classList.remove('bg-white/95', 'shadow-md', 'py-3');
+        nav.classList.add('bg-transparent', 'py-5');
+      }
+    });
+  </script>
+</head>
+
+<body class="bg-slate-50 text-slate-900 font-sans selection:bg-primary/30">
+  
+  <input class="hidden" id="side-nav-toggle" type="checkbox" />
+  <label for="side-nav-toggle" id="nav-overlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[60] opacity-0 invisible pointer-events-none transition-all duration-500 cursor-pointer"></label>
+  <div class="fixed top-0 left-0 h-full w-[320px] bg-white z-[70] shadow-2xl -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10 border-r border-slate-100 backdrop-blur-md bg-white/95" id="side-drawer">
+    <div class="flex justify-between items-center mb-16">
+      <div class="flex items-center gap-2">
+        <div class="bg-primary p-1 rounded-lg">
+          <span class="material-symbols-outlined text-white text-xl">shopping_bag</span>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-navy">AffiliateStore</span>
+      </div>
+      <label class="cursor-pointer text-slate-400 hover:text-navy transition-colors" for="side-nav-toggle">
+        <span class="material-symbols-outlined">close</span>
+      </label>
+    </div>
+    <nav class="flex flex-col space-y-8">
+      <a class="text-2xl font-semibold text-navy nav-link-hover w-max" href="#">Home</a>
+      <a class="text-2xl font-semibold text-navy nav-link-hover w-max" href="/courses">Courses</a>
+      <a class="text-2xl font-semibold text-navy nav-link-hover w-max" href="#team">About</a>
+      <a class="text-2xl font-semibold text-navy nav-link-hover w-max" href="#footer">Contact</a>
+    </nav>
+    <div class="mt-auto pt-10 border-t border-slate-100">
+      <div class="flex items-center gap-6 text-slate-400">
+        <a class="hover:text-primary transition-colors" href="#">
+          <span class="material-symbols-outlined">public</span>
+        </a>
+        <a class="hover:text-primary transition-colors" href="mailto:affiliatestoreng@email.com?subject=Affiliate%20Store%20Support&body=Hello%20my%20name%20is%20">
+          <span class="material-symbols-outlined">alternate_email</span>
+        </a>
+        <a class="hover:text-primary transition-colors" href="https://x.com/AffiliateSt0re">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 bg-transparent border-b border-white/10" id="main-nav">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div class="flex items-center gap-2 group cursor-pointer">
+        <div class="bg-primary p-1.5 rounded-lg group-hover:rotate-12 transition-transform">
+          <span class="material-symbols-outlined text-white text-2xl">shopping_bag</span>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-navy">AffiliateStore</span>
+      </div>
+      <div class="md:flex items-center space-x-6">
+        <div class="hidden md:flex items-center space-x-6">
+          <a class="text-sm font-semibold text-navy/70 hover:text-primary transition-colors" href="#">Home</a>
+          <a class="text-sm font-semibold text-navy/70 hover:text-primary transition-colors" href="/courses">Courses</a>
+          <a class="text-sm font-semibold text-navy/70 hover:text-primary transition-colors" href="#team">About</a>
+          <a class="text-sm font-semibold text-navy/70 hover:text-primary transition-colors" href="#footer">Contact</a>
+          <a href="/courses" class="bg-navy text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-primary transition-all hover:shadow-lg hover:shadow-primary/30">
+            Get Started
+          </a>
+        </div>
+        <label class="cursor-pointer p-2 -ml-2 hover:bg-slate-100 rounded-full transition-colors group" for="side-nav-toggle">
+          <span class="material-symbols-outlined text-navy text-2xl group-hover:scale-110 transition-transform">menu</span>
+        </label>
+      </div>
+    </div>
+  </header>
+  
+  <section class="relative h-screen flex items-center overflow-hidden bg-navy hero-parallax" style="background-image: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.7)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVD0ig3IDuaUnSAfhw5xnOzg94p7aqQzzdsqgvDppX9HRp6aJz3ewx3T5VOwDhW-WV87EYK7qSg3GPr4kGN9cCQaYSMUtVhnGP6Md3JGbCV9WhCs1XYcu0cUi5zyRn0TTWUfA5wLNUYVIknRtmdwKGp6NdzwmWH-N5OyZO7_gIhCTQw2eGlTXwGxj6zo-6VUV2EM1g1Pp1hj3HnhJ5zaCJc1ta2vx1KBXHKp3c-T5Kokou0hI5_NnyBEdez81TA7wu4bhQ1T2fmC0');">
+    <div class="absolute top-1/4 left-1/4 floating-icon" style="animation-delay: 0s">
+      <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-2xl">
+        <span class="material-symbols-outlined text-primary text-4xl">payments</span>
+      </div>
+    </div>
+    <div class="absolute top-1/3 right-1/4 floating-icon" style="animation-delay: 1s">
+      <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-2xl">
+        <span class="material-symbols-outlined text-teal-accent text-4xl">trending_up</span>
+      </div>
+    </div>
+    <div class="absolute bottom-1/4 right-1/3 floating-icon" style="animation-delay: 2s">
+      <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-2xl">
+        <span class="material-symbols-outlined text-amber-400 text-4xl">ads_click</span>
+      </div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="text-white">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-6">Expert-Curated Marketplace</span>
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1]">
+          Scale Your Revenue <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-accent">Automatically.</span>
+        </h1>
+        <p class="text-xl text-slate-300 max-w-xl mb-12 leading-relaxed">
+          Join over 50,000+ marketers leveraging our premium high-conversion digital assets and education modules.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-5">
+          <a href="/courses" class="bg-primary text-white px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-2 group">
+            Browse Courses
+            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </a>
+          <a href="#team">
+            <button class="bg-white/5 backdrop-blur-sm border border-white/10 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all">
+              Our Story
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-0 right-0 z-20 flex flex-col items-center justify-center pointer-events-none scroll-container-fade">
+      <span class="text-white text-[10px] font-bold tracking-[0.2em] mb-3 uppercase opacity-70">Scroll Down</span>
+      <div class="flex flex-col items-center -space-y-4">
+        <span class="material-symbols-outlined text-tealAccent text-3xl chevron-arrow">keyboard_arrow_down</span>
+        <span class="material-symbols-outlined text-tealAccent text-3xl chevron-arrow">keyboard_arrow_down</span>
+        <span class="material-symbols-outlined text-tealAccent text-3xl chevron-arrow">keyboard_arrow_down</span>
+      </div>
+    </div>
+  </section>
+  <section class="py-32 max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+      <div>
+        <h2 class="text-4xl font-extrabold text-navy mb-4">Featured Courses</h2>
+        <p class="text-slate-500 text-lg max-w-md">Our highest converting programs based on real student data.</p>
+      </div>
+      <a class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all group" href="/courses">
+        View All Catalog <span class="material-symbols-outlined">east</span>
+      </a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      
+      <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 transition-all duration-500 hover:-translate-y-4 card-glow-hover group">
+        <div class="relative h-60 overflow-hidden">
+          <img alt="CRYPTO PROFIT KIT" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://yitxwcsnvjfpcyftolqy.supabase.co/storage/v1/object/public/product-images/1753118006663-Screenshot_20250721-181024.jpg" />
+          <div class="absolute inset-0 bg-navy/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <a href="http://affiliatestoreng.vercel.app/product/crypto-profit-kit" class="bg-white text-navy px-6 py-2.5 rounded-xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-xl">Quick View</a>
+          </div>
+          <span class="absolute top-6 left-6 bg-teal-accent backdrop-blur-sm text-white px-4 py-1 rounded-lg text-sm font-bold shadow-lg">Bestseller</span>
+          <span class="absolute top-6 left-40 bg-red-500 text-white px-4 py-1 rounded-lg text-sm font-bold shadow-lg">80% OFF</span>
+        </div>
+        <div class="p-8">
+          <div class="flex items-center gap-1 mb-3 text-amber-400">
+            <span>★★★★☆</span>
+            <span class="text-slate-400 text-xs ml-2 font-medium">(365 reviews)(6623 sales)</span>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-navy">CRYPTO PROFIT KIT</h3>
+          <p>The simplest way to make up to $10,000 every single month trading crypto from home Without being an expert analyst.</p>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-50">
+            <div class="flex items-baseline gap-2">
+              <span class="text-2xl font-extrabold text-primary">₦100,000</span>
+              <span class="text-sm text-slate-400 line-through">₦500,000</span>
+            </div>
+            <a href="https://selar.com/p/ejtf?affiliate=jxel" class="bg-tealAccent text-white px-5 py-2.5 rounded-xl font-bold flex items-center gap-2 transition-all duration-300 buy-button-glow">
+              <span class="material-symbols-outlined text-lg">shopping_cart</span>
+              <span>Buy</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 transition-all duration-500 hover:-translate-y-4 card-glow-hover group">
+        <div class="relative h-60 overflow-hidden">
+          <img alt="Crypto Trading" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://yitxwcsnvjfpcyftolqy.supabase.co/storage/v1/object/public/product-images/1753004689122-SUCCESSSECRETS.jpg" />
+          <div class="absolute inset-0 bg-navy/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <a href="/product/affiliate-marketing-success-secrets" class="bg-white text-navy px-6 py-2.5 rounded-xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-xl">Quick View</a>
+          </div>
+          <span class="absolute top-6 left-6 bg-red-500 text-white px-4 py-1 rounded-lg text-sm font-bold shadow-lg">20% OFF</span>
+        </div>
+        <div class="p-8">
+          <div class="flex items-center gap-1 mb-3 text-amber-400">
+            <span>★★★★☆</span>
+            <span class="text-slate-400 text-xs ml-2 font-medium">(124 reviews)(205 sales)</span>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-navy">AFFILIATE MARKETING SUCCESS SECRETS</h3>
+          <p>Learn The Easiest And Fastest Way To Earn 5-6 Figure Monthly Using Your Smartphone and Internet connection.</p>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-50">
+            <div class="flex items-baseline gap-2">
+              <span class="text-2xl font-extrabold text-primary">₦3,000</span>
+              <span class="text-sm text-slate-400 line-through">₦3,750</span>
+            </div>
+            <a href="https://selar.com/p/6a06iz?affiliate=avb4" class="bg-tealAccent text-white px-5 py-2.5 rounded-xl font-bold flex items-center gap-2 transition-all duration-300 buy-button-glow">
+              <span class="material-symbols-outlined text-lg">shopping_cart</span>
+              <span>Buy</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 transition-all duration-500 hover:-translate-y-4 card-glow-hover group">
+        <div class="relative h-60 overflow-hidden">
+          <img alt="Web Design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://yitxwcsnvjfpcyftolqy.supabase.co/storage/v1/object/public/product-images/1753171813440-Screenshot_20250722-090538.jpg" />
+          <div class="absolute inset-0 bg-navy/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <a href="/product/web-development-resources" class="bg-white text-navy px-6 py-2.5 rounded-xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-xl">Quick View</a>
+          </div>
+        </div>
+        <div class="p-8">
+          <div class="flex items-center gap-1 mb-3 text-amber-400">
+            <span>★★★★☆</span>
+            <span class="text-slate-400 text-xs ml-2 font-medium">(124 reviews)(205 sales)</span>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-navy">Web Development Resources</h3>
+          <p>Elevate Your Web Design with Our Premium Web Design Resources! Bonus: full course on how to make money on fiverr.</p>
+          <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-50">
+            <div class="flex items-baseline gap-2">
+              <span class="text-2xl font-extrabold text-primary">₦3,000</span>
+              <span class="text-sm text-slate-400 line-through">₦10,000</span>
+            </div>
+            <a href="https://selar.com/p/353682?affiliate=tk3n" class="bg-tealAccent text-white px-5 py-2.5 rounded-xl font-bold flex items-center gap-2 transition-all duration-300 buy-button-glow">
+              <span class="material-symbols-outlined text-lg">shopping_cart</span>
+              <span>Buy</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  <section class="bg-navy py-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl font-extrabold text-white mb-4">Browse by Industry</h2>
+        <p class="text-slate-400">Targeted solutions for your specific growth stage.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="relative h-80 rounded-3xl overflow-hidden group cursor-pointer category-tile">
+          <img alt="Finance" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApFbEX0oouyaXLhc77FvJTET6IGhTQfsu4paXbkyI2KTFWYLbmpUJ8E_3ExG1x9wJ_dgmxEI4hdAxM_ynGL0K7zljSCI_z8x25AccQR7JnhNsu9wvj-yIVQGMhAGmXS9sO8gJ0FF6jbz51UhZ81UX3vhyLslicuPAhQn1c-h5HVPrKLPpTYqBAo4hYaHVxI-No6F44B1akJ1sAIEx3wOxXioDxtVDPqel7fkK3CsB8RhO6MR9BcOiRxY6OtdxEDi6HTxqprmDAJPU" />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent flex flex-col justify-end p-10">
+            <h3 class="text-2xl font-bold text-white mb-2">Wealth &amp; Finance</h3>
+            <p class="text-slate-300 max-h-0 opacity-0 description-reveal transition-all duration-500 overflow-hidden leading-relaxed text-sm">
+              Master your money with professional trading signals and investment strategies.
+            </p>
+            <a href="/courses" class="mt-4 flex items-center text-primary font-bold group-hover:translate-x-2 transition-transform">
+              Explore <span class="material-symbols-outlined text-sm ml-2">east</span>
+            </a>
+          </div>
+        </div>
+        <div class="relative h-80 rounded-3xl overflow-hidden group cursor-pointer category-tile">
+          <img alt="Art" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIMfVMsbkNtcERdORi8kzn9o-iG7_aajWygLz5pM4Bx4-T55faSbPmnU4vGybQgqtyv3PJ0O-qxMhfid4tjsx2TCVupJgxWCt-tniAYWCn9RfolEGsV6v53t-X7vsL2IZxryI21Z6ndZNGvSbv2hBFCWyA8j0pm2UoKXLe7UZFsWMCsRrNRxD8wEadODTvF8_Ha53O0B5g5V6yBz7DiF7_xym8AmhDZSW2djYr7xJMUYTEEUCrpGrBJrcFpY3jCO7q3Z-ZxnpDzEs" />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent flex flex-col justify-end p-10">
+            <h3 class="text-2xl font-bold text-white mb-2">Arts &amp; Crafts</h3>
+            <p class="text-slate-300 max-h-0 opacity-0 description-reveal transition-all duration-500 overflow-hidden leading-relaxed text-sm">
+              Turn your creativity into profit with guided workshops and design modules.
+            </p>
+            <a href="/courses" class="mt-4 flex items-center text-primary font-bold group-hover:translate-x-2 transition-transform">
+              Explore <span class="material-symbols-outlined text-sm ml-2">east</span>
+            </a>
+          </div>
+        </div>
+        <div class="relative h-80 rounded-3xl overflow-hidden group cursor-pointer category-tile">
+          <img alt="Electronics" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy3GS20THZk6FQgR7Yk4tp-76TtRVRN_qc0R2ws4Bs5kw6YXln9gdVmAf832fgAhuwoXeTG5C6QWMutE22o1afETRoF5A77-CkoeaZlwIi1DB38CEtRWB2lNDFkN4L3J7XYsY8NLMo9uTkq2U6L5s8USFRIAZ9vV4FkfV8Gxeg2z4cJHPINYbxEIpFEN62hnLw4bSAyiiuZFsC_GA9NlKfkTlBnLaL1FU5rNzUXVQ6OdN5J2_dZrUTDHi_ezEqjwCgZNzPgo6Lpf8" />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent flex flex-col justify-end p-10">
+            <h3 class="text-2xl font-bold text-white mb-2">Tech &amp; Gadgets</h3>
+            <p class="text-slate-300 max-h-0 opacity-0 description-reveal transition-all duration-500 overflow-hidden leading-relaxed text-sm">
+              Stay ahead with expert guides on modern hardware and emerging software tools.
+            </p>
+            <a href="/courses" class="mt-4 flex items-center text-primary font-bold group-hover:translate-x-2 transition-transform">
+              Explore <span class="material-symbols-outlined text-sm ml-2">east</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-32 max-w-7xl mx-auto px-6">
+    <div class="text-center mb-20">
+      <h2 class="text-4xl font-extrabold text-navy mb-4">Why Professional Marketers Choose Us</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-sm transition-all hover:shadow-xl icon-bounce group">
+        <div class="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-3xl">verified_user</span>
+        </div>
+        <h4 class="text-xl font-bold mb-4 text-navy">Curated Quality</h4>
+        <p class="text-slate-500 leading-relaxed text-sm">Every asset is vetted by our internal review board for conversion performance.</p>
+      </div>
+      <div class="p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-sm transition-all hover:shadow-xl icon-rotate group">
+        <div class="bg-teal-accent/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-teal-accent group-hover:bg-black group-hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-3xl">sync</span>
+        </div>
+        <h4 class="text-xl font-bold mb-4 text-navy">Weekly Updates</h4>
+        <p class="text-slate-500 leading-relaxed text-sm">Never fall behind. We refresh our content weekly to reflect current market trends.</p>
+      </div>
+      <div class="p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-sm transition-all hover:shadow-xl icon-bounce group">
+        <div class="bg-amber-500/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-3xl">forum</span>
+        </div>
+        <h4 class="text-xl font-bold mb-4 text-navy">24/7 Support</h4>
+        <p class="text-slate-500 leading-relaxed text-sm">Dedicated account managers ready to help you implement your purchase.</p>
+      </div>
+      <div class="p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-sm transition-all hover:shadow-xl icon-rotate group">
+        <div class="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-3xl">payments</span>
+        </div>
+        <h4 class="text-xl font-bold mb-4 text-navy">Best Prices</h4>
+        <p class="text-slate-500 leading-relaxed text-sm">Direct partner rates ensure you get the absolute lowest price on the web.</p>
+      </div>
+    </div>
+  </section>
+  <section class="py-32 bg-slate-900 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-16 text-center">
+        <h2 class="text-4xl font-extrabold text-white mb-4">Student Success Stories</h2>
+        <p class="text-slate-400">Join 50,000+ others who changed their career paths.</p>
+      </div>
+      <div class="flex overflow-x-auto gap-8 pb-12 hide-scrollbar snap-x cursor-grab active:cursor-grabbing">
+        <div class="flex-none w-full md:w-[450px] bg-slate-800 p-10 rounded-3xl success-slide border border-slate-700/50">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/30">
+              <img alt="User" class="w-full h-full object-cover" src="/pics/Review1.jpg" />
+            </div>
+            <div>
+              <h5 class="font-bold text-white text-lg">Maria-faustina</h5>
+              <p class="text-primary text-sm font-semibold">Registered Nurse</p>
+            </div>
+          </div>
+          <p class="text-slate-300 italic text-lg leading-relaxed mb-6">"As a nurse, I found this health guide really approachable. Simple tips fit my busy shifts, and I'm feeling more balanced after a week. Good stuff!"</p>
+          <div class="flex text-amber-400">
+            <span class="material-symbols-outlined fill-1">★★★★☆</span>
+          </div>
+        </div>
+        <div class="flex-none w-full md:w-[450px] bg-slate-800 p-10 rounded-3xl success-slide border border-slate-700/50">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/30">
+              <img alt="User" class="w-full h-full object-cover" src="/pics/Review2.jpg" />
+            </div>
+            <div>
+              <h5 class="font-bold text-white text-lg">Obinna Williams</h5>
+              <p class="text-primary text-sm font-semibold">Full-time Affiliate</p>
+            </div>
+          </div>
+          <p class="text-slate-300 italic text-lg leading-relaxed mb-6">"These marketing guides are perfect for beginners! Clear and easy to follow. The tips on picking a niche were a lifesaver. Highly recommend!"</p>
+          <div class="flex text-amber-400">
+            <span class="material-symbols-outlined fill-1">★★★★☆</span>
+          </div>
+        </div>
+        <div class="flex-none w-full md:w-[450px] bg-slate-800 p-10 rounded-3xl success-slide border border-slate-700/50">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/30">
+              <img alt="User" class="w-full h-full object-cover" src="/pics/Review3.jpg" />
+            </div>
+            <div>
+              <h5 class="font-bold text-white text-lg">Femi Michael</h5>
+              <p class="text-primary text-sm font-semibold">E-commerce Entrepreneur</p>
+            </div>
+          </div>
+          <p class="text-slate-300 italic text-lg leading-relaxed mb-6">"The electronics guide was super helpful. Clear tips, I'm feeling more tech-savvy already. Great resource for anyone starting out!"</p>
+          <div class="flex text-amber-400">
+            <span class="material-symbols-outlined fill-1">★★★★☆</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center gap-2 mt-8">
+        <div class="w-12 h-1 bg-primary rounded-full"></div>
+        <div class="w-12 h-1 bg-slate-700 rounded-full"></div>
+        <div class="w-12 h-1 bg-slate-700 rounded-full"></div>
+      </div>
+    </div>
+  </section>
+  <section id="team" class="py-32 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+    <div class="relative">
+      <div class="absolute -top-12 -left-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+      <div class="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl transition-transform hover:rotate-0 rotate-2 duration-500">
+        <img alt="Our Team" class="w-full aspect-square object-cover" src="/pics/TheTeam.png" />
+      </div>
+      <div class="absolute -bottom-6 -right-6 bg-white p-8 rounded-3xl shadow-xl z-20 hidden md:block border border-slate-50">
+        <div class="flex items-center gap-4">
+          <div class="bg-teal-accent/10 p-3 rounded-2xl text-teal-accent">
+            <span class="material-symbols-outlined text-4xl">handshake</span>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-navy">120+</div>
+            <div class="text-sm text-slate-500 font-medium">Global Partners</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-4xl font-extrabold text-navy mb-8 leading-tight">Authentic Guidance for Your Digital Journey</h2>
+      <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+        <p>At AffiliateStore, we believe the digital economy should be accessible to everyone. Our team carefully evaluates every product for real-world utility before it reaches our marketplace.</p>
+        <p>We've cut through the noise to bring you only the most impactful tools. When you shop with us, you're not just buying a course—you're investing in a proven roadmap to success.</p>
+      </div>
+      <div class="mt-12 flex items-center gap-8">
+        <a href="/team" class="bg-navy text-white px-10 py-4 rounded-2xl font-bold hover:bg-primary transition-all shadow-xl hover:shadow-primary/30">
+          Meet The Team
+        </a>
+        <div class="flex -space-x-4">
+          <img alt="User" class="w-12 h-12 rounded-full border-4 border-white object-cover" src="/pics/PP-christian.jpg" />
+          <img alt="User" class="w-12 h-12 rounded-full border-4 border-white object-cover" src="/pics/PP-faustina.jpg" />
+          <div class="w-12 h-12 rounded-full border-4 border-white bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-500">24k+</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="max-w-7xl mx-auto px-6 mb-32">
+    <div class="bg-gradient-to-br from-primary via-primary to-teal-accent rounded-[3.5rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+      <div class="relative z-10 max-w-2xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Stay Ahead of the Curve</h2>
+        <p class="text-white/80 text-lg mb-12">Get exclusive early access to high-conversion product launches and private marketing webinars.</p>
+        <form class="flex flex-col sm:flex-row gap-4 p-2 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20">
+          <input class="flex-1 bg-transparent px-6 py-4 rounded-2xl border-0 focus:ring-0 placeholder:text-white/50 text-white" placeholder="your@email.com" required="" type="email" />
+          <button class="bg-white text-navy px-10 py-4 rounded-2xl font-bold hover:bg-navy hover:text-white transition-all" type="submit">Join Newsletter</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer id="footer" class="bg-navy text-slate-400 py-24 px-6 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
+      <div class="space-y-8">
+        <div class="flex items-center gap-2 text-white">
+          <span class="material-symbols-outlined text-primary text-3xl">shopping_bag</span>
+          <span class="text-2xl font-bold tracking-tight">AffiliateStore</span>
+        </div>
+        <p class="text-sm leading-relaxed max-w-xs">Democratizing access to high-tier digital education and marketing assets since 2023.</p>
+        <div class="flex gap-6">
+          <a class="hover:text-primary transition-colors" href="../index.html"><span class="material-symbols-outlined">public</span></a>
+          <a class="hover:text-primary transition-colors" href="mailto:affiliatestoreng@email.com?subject=Affiliate%20Store%20Support&body=Hello%20my%20name%20is%20"><span class="material-symbols-outlined">alternate_email</span></a>
+          <a class="hover:text-primary transition-colors" href="https://x.com/AffiliateSt0re"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5 class="text-white font-bold mb-8 uppercase tracking-widest text-xs">Catalog</h5>
+        <ul class="space-y-4 text-sm font-medium">
+          <li><a class="hover:text-white transition-colors" href="/courses">Marketing Mastery</a></li>
+          <li><a class="hover:text-white transition-colors" href="/courses">Financial Growth</a></li>
+          <li><a class="hover:text-white transition-colors" href="/courses">Design Assets</a></li>
+          <li><a class="hover:text-white transition-colors" href="/courses">Bundle Deals</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-white font-bold mb-8 uppercase tracking-widest text-xs">Resource Hub</h5>
+        <ul class="space-y-4 text-sm font-medium">
+          <li><a class="hover:text-white transition-colors" href="/courses">Success Blueprint</a></li>
+          <li><a class="hover:text-white transition-colors" href="https://wa.me/2348022839391?text=Hello,%20I'm%20interested%20in%20joining%20the%20affiliate%20program.%0AMy%20name%20is">Affiliate Program</a></li>
+          <li><a class="hover:text-white transition-colors" href="https://wa.me/2348022839391">Help Center</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-white font-bold mb-8 uppercase tracking-widest text-xs">Support</h5>
+        <ul class="space-y-4 text-sm font-medium">
+          <li class="flex items-center gap-3"><a href="https://wa.me/2348022839391"><span class="material-symbols-outlined text-primary text-sm">chat_bubble</span> customer care</a></li>
+          <li class="flex items-center gap-3"><a><span class="material-symbols-outlined text-primary text-sm">schedule</span> Mon - Fri: 9am - 6pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-16 mt-16 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium">
+      <p>© 2026 AffiliateStore. Empowering independent growth worldwide.</p>
+      <div class="flex gap-8">
+        <a class="hover:text-white" href="#">Privacy Policy</a>
+        <a class="hover:text-white" href="#">Cookie Settings</a>
+        <a class="hover:text-white" href="#">Legal Notice</a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "Affiliate Store",
+  "short_name": "AffiliateStore",
+  "description": "Transforming the web through clean and efficient code",
+  "start_url": "https://affiliatestoreng.vercel.app",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/pics/profilePic.jpg",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/pics/profilePic.jpg",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/pics/profilePic.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
