@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Product Details</title>
+    <!-- Basic SEO -->
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="" />
+
+  <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:title" content="Product Details" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="" />
+  <meta name="twitter:title" content="" />
+  <meta name="twitter:description" content="" />
+  <meta name="twitter:image" content="" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+  
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0EA5E9",
+            "navy": "#0F172A",
+            "navy-blue": "#0EA5E9",
+            "teal-accent": "#0D9488",
+            "background-white": "#FFFFFF",
+          },
+          fontFamily: {
+            "sans": ["Inter", "sans-serif"]
+          },
+        },
+      },
+    }
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('main-nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('bg-white/95', 'shadow-md', 'py-3');
+        nav.classList.remove('bg-transparent', 'py-5');
+      } else {
+        nav.classList.remove('bg-white/95', 'shadow-md', 'py-3');
+        nav.classList.add('bg-transparent', 'py-5');
+      }
+    });
+  </script>
+  <style type="text/tailwindcss">
+    :root {
+            --navy-derp: #0F172A;
+            
+            --electric-blue: #0EA5E9;
+            --teal-accent: #14B8A6;
+            --crisp-white: #FFFFFF;
+        }
+    body {
+            @apply bg-background-white text-slate-800 antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .star-rating {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+        }
+        .nav-scrolled {
+            @apply bg-white/95 border-b border-slate-200;
+        }
+        .success-slide {
+            scroll-snap-align: start;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .animate-on-scroll {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .icon-bounce:hover span {
+            animation: bounce-subtle 0.6s ease-in-out;
+        }
+        .icon-rotate:hover span {
+            transform: rotate(360deg);
+            transition: transform 0.6s ease;
+        }
+        
+        #side-nav-toggle:checked ~ #side-drawer {
+            transform: translateX(0);
+        }
+        #side-nav-toggle:checked ~ #nav-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+        .nav-link-hover {
+            position: relative;
+        }
+        .nav-link-hover::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--electric-blue);
+            transition: width 0.3s ease;
+        }
+        .nav-link-hover:hover::after {
+            width: 100%;
+        }
+        #side-nav-toggle:checked + #nav-overlay {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+  
+  <input class="hidden" id="side-nav-toggle" type="checkbox" />
+  <label for="side-nav-toggle" id="nav-overlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[60] opacity-0 invisible pointer-events-none transition-all duration-500 cursor-pointer"></label>
+  <div class="fixed top-0 left-0 h-full w-[320px] bg-white z-[70] shadow-2xl -translate-x-full transition-transform duration-500 ease-in-out flex flex-col p-10 border-r border-slate-100 backdrop-blur-md bg-white/95" id="side-drawer">
+    <div class="flex justify-between items-center mb-16">
+      <div class="flex items-center gap-2">
+        <div class="bg-primary p-1 rounded-lg">
+          <span class="material-symbols-outlined text-white text-xl">shopping_bag</span>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-navy">AffiliateStore</span>
+      </div>
+      <label class="cursor-pointer text-slate-400 hover:text-navy transition-colors" for="side-nav-toggle">
+        <span class="material-symbols-outlined">close</span>
+      </label>
+    </div>
+    <nav class="flex flex-col space-y-8">
+      <a class="text-2xl font-semibold text-navy nav-link-hover w-max" href="../index.html">Home</a>
+      <a class="text-2xl font-semibold text-navy nav-link-hover w-max" href="/courses">Courses</a>
+      <a class="text-2xl font-semibold text-navy nav-link-hover w-max" href="#team">About</a>
+      <a class="text-2xl font-semibold text-navy nav-link-hover w-max" href="#footer">Contact</a>
+    </nav>
+    <div class="mt-auto pt-10 border-t border-slate-100">
+      <div class="flex items-center gap-6 text-slate-400">
+        <a class="hover:text-primary transition-colors" href="#">
+          <span class="material-symbols-outlined">public</span>
+        </a>
+        <a class="hover:text-primary transition-colors" href="mailto:affiliatestoreng@email.com?subject=Affiliate%20Store%20Support&body=Hello%20my%20name%20is%20">
+          <span class="material-symbols-outlined">alternate_email</span>
+        </a>
+        <a class="hover:text-primary transition-colors" href="https://x.com/AffiliateSt0re">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 bg-transparent border-b border-white/10" id="main-nav">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div class="flex items-center gap-2 group cursor-pointer">
+        <div class="bg-primary p-1.5 rounded-lg group-hover:rotate-12 transition-transform">
+          <span class="material-symbols-outlined text-white text-2xl">shopping_bag</span>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-navy">AffiliateStore</span>
+      </div>
+      <div class="md:flex items-center space-x-6">
+        <div class="hidden md:flex items-center space-x-6">
+          <a class="text-sm font-semibold text-navy/70 hover:text-primary transition-colors" href="../index.html">Home</a>
+          <a class="text-sm font-semibold text-navy/70 hover:text-primary transition-colors" href="/courses">Courses</a>
+          <a class="text-sm font-semibold text-navy/70 hover:text-primary transition-colors" href="#team">About</a>
+          <a class="text-sm font-semibold text-navy/70 hover:text-primary transition-colors" href="#footer">Contact</a>
+          <a href="/courses" class="bg-navy text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-primary transition-all hover:shadow-lg hover:shadow-primary/30">
+            Get Started
+          </a>
+        </div>
+        <label class="cursor-pointer p-2 -ml-2 hover:bg-slate-100 rounded-full transition-colors group" for="side-nav-toggle">
+          <span class="material-symbols-outlined text-navy text-2xl group-hover:scale-110 transition-transform">menu</span>
+        </label>
+      </div>
+    </div>
+  </header>
+  
+  <main class="flex-grow flex items-center mt-16 py-12 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6 w-full">
+      <div id="product-card" class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <div id="preloader" class="flex flex-col items-center gap-6">
+          <div class="w-14 h-14 border-4 border-slate-200 border-t-primary rounded-full animate-spin"></div>
+          <p class="text-slate-500 font-medium">Loading product...</p>
+        </div>
+        
+      </div>
+    </div>
+  </main>
+  
+  <footer id="footer" class="bg-navy text-slate-400 py-24 px-6 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
+      <div class="space-y-8">
+        <div class="flex items-center gap-2 text-white">
+          <span class="material-symbols-outlined text-primary text-3xl">shopping_bag</span>
+          <span class="text-2xl font-bold tracking-tight">AffiliateStore</span>
+        </div>
+        <p class="text-sm leading-relaxed max-w-xs">Democratizing access to high-tier digital education and marketing assets since 2023.</p>
+        <div class="flex gap-6">
+          <a class="hover:text-primary transition-colors" href="../index.html"><span class="material-symbols-outlined">public</span></a>
+          <a class="hover:text-primary transition-colors" href="mailto:affiliatestoreng@email.com?subject=Affiliate%20Store%20Support&body=Hello%20my%20name%20is%20"><span class="material-symbols-outlined">alternate_email</span></a>
+          <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">rss_feed</span></a>
+        </div>
+      </div>
+      <div>
+        <h5 class="text-white font-bold mb-8 uppercase tracking-widest text-xs">Catalog</h5>
+        <ul class="space-y-4 text-sm font-medium">
+          <li><a class="hover:text-white transition-colors" href="#header">Marketing Mastery</a></li>
+          <li><a class="hover:text-white transition-colors" href="#header">Financial Growth</a></li>
+          <li><a class="hover:text-white transition-colors" href="#header">Design Assets</a></li>
+          <li><a class="hover:text-white transition-colors" href="#header">Bundle Deals</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-white font-bold mb-8 uppercase tracking-widest text-xs">Resource Hub</h5>
+        <ul class="space-y-4 text-sm font-medium">
+          <li><a class="hover:text-white transition-colors" href="#header">Success Blueprint</a></li>
+          <li><a class="hover:text-white transition-colors" href="https://wa.me/2348022839391?text=Hello,%20I'm%20interested%20in%20joining%20the%20affiliate%20program.%0AMy%20name%20is">Affiliate Program</a></li>
+          <li><a class="hover:text-white transition-colors" href="https://wa.me/2348022839391">Help Center</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-white font-bold mb-8 uppercase tracking-widest text-xs">Support</h5>
+        <ul class="space-y-4 text-sm font-medium">
+          <li class="flex items-center gap-3"><a href="https://wa.me/2348022839391"><span class="material-symbols-outlined text-primary text-sm">chat_bubble</span> customer care</a></li>
+          <li class="flex items-center gap-3"><a><span class="material-symbols-outlined text-primary text-sm">schedule</span> Mon - Fri: 9am - 6pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-16 mt-16 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium">
+      <p>© 2026 AffiliateStore. Empowering independent growth worldwide.</p>
+      <div class="flex gap-8">
+        <a class="hover:text-white" href="#">Privacy Policy</a>
+        <a class="hover:text-white" href="#">Cookie Settings</a>
+        <a class="hover:text-white" href="#">Legal Notice</a>
+      </div>
+    </div>
+  </footer>
+  <script type="module">
+    import { supabase } from '/js/supabase.js';
+    
+    async function loadProduct() {
+      // Try to get slug from ?slug= query first
+      let slug = new URLSearchParams(window.location.search).get("slug");
+      // If no ?slug=, get from path (/product/slug)
+      if (!slug) {
+        const parts = window.location.pathname.split("/");
+        slug = parts.pop() || parts.pop(); // handles trailing slash
+      }
+      
+      if (!slug) {
+        document.getElementById('product-card').innerHTML = errorUI("Product might've been moved or removed");
+        return;
+      }
+      
+      // Fetch product by slug
+      const { data, error } = await supabase
+        .from("Products")
+        .select("*")
+        .eq("slug", slug)
+        .single();
+      
+      const priceFormatter = new Intl.NumberFormat("en-NG");
+      
+      if (error || !data) {
+        document.getElementById('product-card').innerHTML = errorUI("Product not found.");
+        return;
+      }
+      
+      function setMetaTag(name, content) {
+        let tag = document.querySelector(`meta[name="${name}"]`);
+        if (!tag) {
+          tag = document.createElement('meta');
+          tag.setAttribute('name', name);
+          document.head.appendChild(tag);
+        }
+        tag.setAttribute('content', content || '');
+      }
+      function setMetaProperty(property, content) {
+        let tag = document.querySelector(`meta[property="${property}"]`);
+        if (!tag) {
+          tag = document.createElement('meta');
+          tag.setAttribute('property', property);
+          document.head.appendChild(tag);
+        }
+        tag.setAttribute('content', content || '');
+      }
+
+      try {
+        updateMetaTags(data);
+        console.log("Meta tags updated successfully");
+      } catch(e) {
+        console.error("Error updating meta tags:", e);
+      }
+      
+      const discountedPrice = Number(data.price);
+        const discount = Number(data.discount) || 0;
+        const originalPrice = discount > 0 ?
+           Math.round(discountedPrice / (1 - discount / 100)) : "";
+      
+      document.getElementById('product-card').innerHTML = `
+        <div class="relative group">
+          <div class="aspect-square bg-slate-50 rounded-2xl overflow-hidden shadow-sm border border-slate-100/50 relative">
+            <img alt="${data.title}" class="w-full h-full object-cover" src="${data.imageUrl}" />
+            <div class="absolute top-6 left-6 bg-${data.discountGroup}-500 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg shadow-teal-accent/20">
+              -${data.discount}% OFF
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col space-y-8">
+          <div>
+            <h1 class="text-4xl lg:text-5xl font-extrabold text-navy leading-tight tracking-tight mb-4">
+              ${data.title}
+            </h1>
+            <div class="flex items-center gap-1 text-yellow-500 mb-6">
+              <span class="material-symbols-outlined star-rating">${data.rating}</span>
+              <span class="text-slate-400 text-xs ml-2 font-medium">(${data.ratingCount || 0} reviews)(${data.sales} sales)</span>
+            </div>
+            <div class="mb-6 flex items-baseline gap-4">
+              <span class="text-5xl font-bold text-navy-blue tracking-tighter">₦${priceFormatter.format(Number(data.price))}</span>
+              <span class="text-xl font-medium text-slate-400 line-through decoration-slate-300">₦${priceFormatter.format(Number(originalPrice))}</span>
+            </div>
+            <p class="text-lg text-slate-500 leading-relaxed max-w-md">
+              ${data.description}
+            </p>
+          </div>
+          <div class="flex flex-col space-y-4">
+            <a href="${data.affLink}" class="w-full md:w-auto px-12 py-5 bg-navy-blue hover:bg-slate-800 text-white font-bold rounded-full flex items-center justify-center gap-3 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-xl shadow-navy-blue/10">
+              <span class="material-symbols-outlined">shopping_cart</span>
+              <span class="text-lg">Buy Now</span>
+            </a>
+            <p class="text-xs text-slate-400">
+              * Commissions may be earned from qualifying purchases via affiliate links.
+            </p>
+          </div>
+        </div>
+      `;
+    }
+    
+    loadProduct();
+
+    function updateMetaTags(product) {
+      if (!product) return;
+      document.title = product.title || "Product Details";
+      if (product.description) setMetaTag('description', product.description);
+
+      setMetaProperty('og:title', product.title || "Product Details");
+      setMetaProperty('og:description', product.description || "");
+      setMetaProperty('og:image', product.image || "/default-image.jpg");
+      setMetaProperty('og:url', window.location.href);
+
+      setMetaProperty('twitter:title', product.title || "Product Details");
+      setMetaProperty('twitter:description', product.description || "");
+      setMetaProperty('twitter:image', product.image || "/default-image.jpg");
+    }
+
+    function errorUI(message) {
+    return `
+    <div class="flex flex-col items-center text-center py-24 gap-6">
+      <div class="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center">
+        <span class="material-symbols-outlined text-3xl">error</span>
+      </div>
+      <h2 class="text-2xl font-bold text-navy">${message}</h2>
+      <div class="flex gap-6">
+        <a href="/" class="px-6 py-3 bg-primary text-white rounded-full font-semibold hover:shadow-lg transition">
+          Go Back Home
+        </a>
+        <a href="https://wa.me/2348022839391" class="px-6 py-3 bg-primary text-white rounded-full font-semibold hover:shadow-lg transition">
+          Contact support
+        </a>
+      </div>
+    </div>
+  `;
+  }
+  </script>
+</body>
+
+</html>
